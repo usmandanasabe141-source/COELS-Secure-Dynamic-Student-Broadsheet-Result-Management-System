@@ -6,11 +6,12 @@
     <title>COELS Secure Broadsheet & Result Management System</title>
     <style>
         :root {
-            --coels-blue: #0f3057;
-            --coels-accent: #ffc107;
-            --coels-light: #008891;
-            --coels-bg: #f5f7fa;
-            --dark-text: #222831;
+            /* AN CANZA TSARIN LAUNI ZUWA LIGHT GREEN */
+            --coels-bg: #E2F0D9; /* Light Green background */
+            --card-bg: #E2F0D9;
+            --dark-text: #1E293B;
+            --border-color: #A9D18E; /* Muted Green border */
+            --btn-color: #385E38; /* Soft Dark Green ga buttons */
         }
 
         * {
@@ -26,23 +27,30 @@
             padding-bottom: 3rem;
         }
 
+        /* HEADER YA KOMA LIGHT GREEN */
         .coels-header {
-            background-color: var(--coels-blue);
-            color: white;
+            background-color: var(--coels-bg); 
+            color: var(--dark-text);
             text-align: center;
             padding: 1.5rem 1rem;
-            border-bottom: 5px solid var(--coels-accent);
+            border-bottom: 3px solid var(--border-color);
         }
 
         .coels-header h1 {
             font-size: 1.5rem;
             text-transform: uppercase;
+            color: var(--dark-text);
         }
 
         .coels-header h2 {
             font-size: 1.1rem;
-            color: var(--coels-accent);
+            color: #2D4A2D; 
             margin-top: 0.3rem;
+        }
+
+        .coels-header p {
+            color: #4A6B4A;
+            font-weight: 500;
         }
 
         .container {
@@ -51,10 +59,11 @@
             padding: 0 1rem;
         }
 
+        /* PORTAL NAV YA KOMA LIGHT GREEN */
         .portal-nav {
             display: flex;
-            background: white;
-            border: 1px solid #dbe2ef;
+            background: var(--coels-bg); 
+            border: 1px solid var(--border-color);
             border-radius: 4px;
             margin-bottom: 1.5rem;
             overflow: hidden;
@@ -64,70 +73,83 @@
             flex: 1;
             text-align: center;
             padding: 1rem;
-            background: #f1f4f9;
+            background: var(--coels-bg); 
             border: none;
             font-weight: bold;
-            color: var(--coels-blue);
+            color: var(--dark-text);
             text-transform: uppercase;
+            cursor: pointer;
         }
 
         .nav-link.active {
-            background-color: var(--coels-blue);
-            color: white;
-            border-bottom: 3px solid var(--coels-accent);
+            background-color: #C5E0B4; /* Dan duhun kore kadan don nuna active tab */
+            color: var(--dark-text);   
+            border-bottom: 4px solid var(--btn-color);
         }
 
+        /* PORTAL CARD SHIMA LIGHT GREEN */
         .portal-card {
-            background: white;
+            background: var(--card-bg); 
             padding: 1.5rem;
             border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
         }
 
-        /* Tsarin Modal Overlay don Admin Panel */
         .admin-modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.85);
             z-index: 999;
             display: none;
-            align-items: center;
-            justify-content: center;
             overflow-y: auto;
-            padding: 20px;
+            padding: 10px;
         }
 
         .admin-modal-content {
-            background: white;
-            padding: 2rem;
+            background: var(--coels-bg); /* MODAL SHIMA YA KOMA LIGHT GREEN */
+            padding: 3.5rem 1.5rem 2rem 1.5rem;
             border-radius: 8px;
             max-width: 1250px;
             width: 100%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            margin: 20px auto;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
             position: relative;
+            border: 1px solid var(--border-color);
         }
 
         .close-modal-btn {
             position: absolute;
-            top: 10px;
+            top: 12px;
             right: 15px;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             cursor: pointer;
-            background: none;
+            background: #dc3545;
             border: none;
-            color: #333;
+            color: white;
             font-weight: bold;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1010;
+        }
+
+        .close-modal-btn:hover {
+            background: #bd2130;
         }
 
         .secure-lock-screen {
             text-align: center;
             padding: 3rem 1rem;
-            background: #fff;
+            background: var(--coels-bg);
             border-radius: 4px;
-            border-top: 4px solid var(--coels-blue);
+            border-top: 4px solid var(--btn-color);
         }
 
         .secure-lock-screen input {
@@ -141,9 +163,9 @@
         .section-title {
             font-size: 1.2rem;
             margin-bottom: 1.2rem;
-            color: var(--coels-blue);
+            color: var(--dark-text);
             text-transform: uppercase;
-            border-bottom: 2px solid #e1e8ed;
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 0.3rem;
             font-weight: 700;
         }
@@ -169,16 +191,16 @@
             cursor: pointer;
             font-size: 0.85rem;
         }
-        .btn-add { background-color: #28a745; color: white; }
-        .btn-remove { background-color: #dc3545; color: white; }
+        .btn-add { background-color: #2E7D32; color: white; }
+        .btn-remove { background-color: #c62828; color: white; }
 
         .courses-subgrid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
             gap: 10px;
-            background: #f7fafc;
+            background: #C5E0B4;
             padding: 1rem;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border-color);
             border-radius: 4px;
             margin-bottom: 1rem;
         }
@@ -189,7 +211,7 @@
             gap: 4px;
             background: white;
             padding: 6px;
-            border: 1px solid #cbd5e0;
+            border: 1px solid var(--border-color);
             border-radius: 4px;
         }
 
@@ -197,9 +219,9 @@
             font-weight: bold;
             text-transform: uppercase;
             text-align: center;
-            background: #edf2f7;
-            border: 1px solid #a0aec0;
-            color: var(--coels-blue);
+            background: #E2F0D9;
+            border: 1px solid var(--border-color);
+            color: var(--dark-text);
             font-size: 0.8rem;
             padding: 4px;
         }
@@ -209,7 +231,7 @@
             font-weight: bold;
             text-transform: uppercase;
             padding: 4px;
-            border: 1px solid #cbd5e0;
+            border: 1px solid var(--border-color);
         }
 
         label {
@@ -217,19 +239,21 @@
             margin-bottom: 0.3rem;
             font-weight: bold;
             font-size: 0.8rem;
-            color: #4a5568;
+            color: #2D4A2D;
         }
 
         input, select {
             width: 100%;
             padding: 0.5rem;
-            border: 1px solid #cbd5e0;
+            border: 1px solid var(--border-color);
             border-radius: 4px;
             font-size: 0.9rem;
+            background-color: white;
+            color: var(--dark-text);
         }
 
         .coels-btn {
-            background-color: var(--coels-blue);
+            background-color: var(--btn-color); 
             color: white;
             padding: 0.75rem;
             border: none;
@@ -239,12 +263,15 @@
             text-transform: uppercase;
             width: 100%;
         }
+        .coels-btn:hover {
+            background-color: #253F25;
+        }
 
         .table-container {
             width: 100%;
             overflow-x: auto;
             margin-top: 1.5rem;
-            border: 1px solid #cbd5e0;
+            border: 1px solid var(--border-color);
         }
 
         table {
@@ -257,13 +284,13 @@
         }
 
         th, td {
-            border: 1px solid #a0aec0;
+            border: 1px solid var(--border-color);
             padding: 6px 4px;
         }
 
         th {
-            background-color: #ebf8ff;
-            color: #2b6cb0;
+            background-color: #C5E0B4;
+            color: var(--dark-text);
             font-weight: bold;
             vertical-align: middle;
         }
@@ -273,22 +300,33 @@
             transition: background 0.2s;
         }
         tbody tr:hover {
-            background-color: #ffeef0 !important;
+            background-color: #F2F9EE !important;
         }
 
         .course-hdr {
-            background-color: #f7fafc;
+            background-color: #E2F0D9;
             font-size: 0.7rem;
             font-weight: bold;
             min-width: 65px;
         }
 
         tr:nth-child(even) {
-            background-color: #f8fafc;
+            background-color: #F2F9EE;
         }
 
-        .pass-badge { color: green; font-weight: bold; }
-        .fail-badge { color: red; font-weight: bold; }
+        .pass-badge { color: #1B5E20; font-weight: bold; }
+        .fail-badge { color: #B71C1C; font-weight: bold; }
+
+        @media print {
+            body { background: white; color: black; }
+            .coels-header, .portal-nav, #student-panel > .section-title, 
+            #student-panel > div:nth-child(2), #student-panel > button, 
+            #floatingAdminBtn, .download-btn-container {
+                display: none !important;
+            }
+            .container { width: 100%; max-width: 100%; margin: 0; padding: 0; }
+            #singleSlip { border: none !important; box-shadow: none !important; display: block !important; }
+        }
     </style>
 </head>
 <body>
@@ -300,23 +338,26 @@
     </header>
 
     <div class="container">
+        <!-- PORTAL NAVIGATION -->
         <div class="portal-nav">
             <button class="nav-link active" id="tab-student">Student Result Checker</button>
         </div>
 
+        <!-- STUDENT PANEL -->
         <div id="student-panel" class="portal-card">
             <div class="section-title">Check Semester Result Slip</div>
             <div style="margin-bottom: 1rem;">
                 <label>Enter Matric Number</label>
                 <input type="text" id="searchMatric" placeholder="Matric Number">
             </div>
-            <button onclick="checkStudentResult()" class="coels-btn" style="background-color: var(--coels-light);">Search Result</button>
+            <button onclick="checkStudentResult()" class="coels-btn">Search Result</button>
 
-            <div id="singleSlip" style="display:none; margin-top: 2rem; border: 2px double #a0aec0; padding: 1.5rem; background: #fff;">
-                <h3 style="text-align:center; color: var(--coels-blue);">COLLEGE OF EDUCATION AND LEGAL STUDIES, NGURU</h3>
+            <!-- SLIP NA RESULT -->
+            <div id="singleSlip" style="display:none; margin-top: 2rem; border: 2px double var(--border-color); padding: 1.5rem; background: #fff;">
+                <h3 style="text-align:center; color: var(--dark-text);">COLLEGE OF EDUCATION AND LEGAL STUDIES, NGURU</h3>
                 <h4 style="text-align:center; margin-bottom: 1rem;">OFFICIAL PERFORMANCE STATEMENT</h4>
                 <p><strong>Name:</strong> <span id="slipName"></span> | <strong>Matric No:</strong> <span id="slipMatric"></span></p>
-                <p><strong>Semester:</strong> <span id="slipSemester" style="color: var(--coels-light); font-weight: bold;"></span></p>
+                <p><strong>Semester:</strong> <span id="slipSemester" style="color: #2D4A2D; font-weight: bold;"></span></p>
                 <hr style="margin: 1rem 0;">
                 
                 <table style="min-width: 100%;">
@@ -332,31 +373,40 @@
                         <tr><td>Credit Units Registered (CUR)</td><td id="sCur"></td><td id="sPtcur"></td><td id="sTcur"></td></tr>
                         <tr><td>Credit Units Earned (CUE)</td><td id="sCue"></td><td id="sPtcue"></td><td id="sTcue"></td></tr>
                         <tr><td>Weighted Grade Points (WGP)</td><td id="sWgp"></td><td id="sPtwgp"></td><td id="sTwgp"></td></tr>
-                        <tr><td>Grade Point Average (GPA/CGPA)</td><td id="sGpa" style="font-weight:bold;"></td><td id="sPcgpa"></td><td id="sCgpa" style="font-weight:bold; color:var(--coels-blue);"></td></tr>
+                        <tr><td>Grade Point Average (GPA/CGPA)</td><td id="sGpa" style="font-weight:bold;"></td><td id="sPcgpa"></td><td id="sCgpa" style="font-weight:bold; color:var(--dark-text);"></td></tr>
                     </tbody>
                 </table>
                 
-                <h5 style="margin-top: 1.5rem; color: var(--coels-blue);">Registered Courses Breakdown:</h5>
+                <h5 style="margin-top: 1.5rem; color: var(--dark-text);">Registered Courses Breakdown:</h5>
                 <ul id="slipCoursesBreakdown" style="padding-left: 20px; font-size: 0.9rem; margin-top: 0.5rem;"></ul>
 
-                <p style="margin-top: 1rem; font-weight:bold;">Final Remark Status: <span id="slipRemark"></span></p>
+                <p style="margin-top: 1rem; font-weight:bold; margin-bottom: 1.5rem;">Final Remark Status: <span id="slipRemark"></span></p>
+                
+                <div class="download-btn-container">
+                    <button onclick="downloadResultSlip()" class="coels-btn" style="background-color: #2E7D32; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        📥 Download Result Slip (PDF)
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- ADMIN PANEL OVERLAY (MODAL BOX) -->
     <div id="adminModalOverlay" class="admin-modal-overlay">
         <div class="admin-modal-content">
-            <button class="close-modal-btn" onclick="closeAdminModal()">×</button>
+            <button class="close-modal-btn" onclick="closeAdminModal()" title="Close Panel">×</button>
             
             <div id="admin-panel">
+                <!-- Lock Screen Display -->
                 <div id="lockScreen" class="secure-lock-screen">
                     <div style="font-size: 3rem; margin-bottom: 0.5rem;">🔒</div>
-                    <h3 style="color: var(--coels-blue);">Administrator Verification Required</h3>
-                    <p style="color: #718096; font-size: 0.9rem;">Please enter the security password to unlock the broadsheet matrix.</p>
+                    <h3 style="color: var(--dark-text);">Administrator Verification Required</h3>
+                    <p style="color: #4A6B4A; font-size: 0.9rem;">Please enter the security password to unlock the broadsheet matrix.</p>
                     <input type="password" id="adminPassInput" placeholder="••••••••" onkeydown="if(event.key==='Enter') verifyAdminKey()">
                     <button type="button" class="coels-btn" style="max-width: 300px; margin: 1rem auto; display: block;" onclick="verifyAdminKey()">Unlock Portal</button>
                 </div>
 
+                <!-- Main Panel Content -->
                 <div id="secureContent" style="display: none;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                         <div class="section-title" style="margin-bottom:0; border-bottom:none;">Enter Student Semester Record</div>
@@ -378,6 +428,7 @@
                                 <label>Remark Status</label>
                                 <select id="remark">
                                     <option value="Pass">Pass</option>
+                                    <option value="Carry Over">Carry Over</option>
                                     <option value="Spill">Spill</option>
                                 </select>
                             </div>
@@ -446,7 +497,8 @@
         </div>
     </div>
 
-    <button id="floatingAdminBtn" onclick="openAdminModal()" style="position: fixed; bottom: 20px; right: 20px; background-color: var(--coels-blue); color: white; border: 2px solid var(--coels-accent); border-radius: 50%; width: 50px; height: 50px; font-size: 1.4rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; justify-content: center;" title="Upload Broadsheet Results">
+    <!-- MABALLIN KWADO (LIGHT GREEN MATCHED) -->
+    <button id="floatingAdminBtn" onclick="openAdminModal()" style="position: fixed; bottom: 20px; right: 20px; background-color: #C5E0B4; color: var(--dark-text); border: 2px solid var(--border-color); border-radius: 50%; width: 55px; height: 55px; font-size: 1.4rem; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000; display: flex; align-items: center; justify-content: center;" title="Upload Broadsheet Results">
         🔒
     </button>
 
@@ -459,9 +511,8 @@
         const initialSlotsCount = 4;
         let globalDatabase = {}; 
 
-        // Functions don sarrafa Admin Modal Window
         function openAdminModal() {
-            document.getElementById('adminModalOverlay').style.display = 'flex';
+            document.getElementById('adminModalOverlay').style.display = 'block';
             if (!isVerified) {
                 document.getElementById('lockScreen').style.display = 'block';
                 document.getElementById('secureContent').style.display = 'none';
@@ -532,7 +583,7 @@
             .then(res => res.json())
             .then(data => {
                 globalDatabase = data ? data : {};
-                if(isVerified && document.getElementById('adminModalOverlay').style.display === 'flex') {
+                if(isVerified && document.getElementById('adminModalOverlay').style.display === 'block') {
                     renderBroadsheetTable();
                 }
             })
@@ -705,14 +756,12 @@
             document.getElementById('singleSlip').style.display = 'block';
         }
 
+        function downloadResultSlip() {
+            window.print();
+        }
+
         window.onload = function() {
             fetchRealtimeData();
-            // Yana refresh duk sakan 5 matukar admin baya rubutu
-            setInterval(function() {
-                if(!isVerified || document.activeElement.tagName !== "INPUT") {
-                    fetchRealtimeData();
-                }
-            }, 5000); 
         };
     </script>
 </body>
